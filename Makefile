@@ -3,7 +3,7 @@ start:
 	npm run babel-node -- src/bin/brain-games.js
 
 lint:
-	npm run eslint src
+	npm run test
 
 test: lint
 
