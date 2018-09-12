@@ -1,13 +1,13 @@
 {
   "name": "@andreirk/bgames",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "brain-games": "node dist/bin/brain-games.js",
     "brain-even": "node dist/bin/brain-even.js",
-    "babel-node": "babel-node",
+    "brain-calc": "node dist/bin/brain-calc.js",
     "build": "set NODE_ENV=production && babel src --out-dir dist --source-maps inline ",
     "prepublishOnly": "npm run build",
     "eslint": "eslint"
@@ -20,7 +20,8 @@
   "license": "ISC",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
