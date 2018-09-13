@@ -9,6 +9,7 @@
     "brain-even": "node dist/bin/brain-even.js",
     "brain-calc": "node dist/bin/brain-calc.js",
     "brain-gcd": "node dist/bin/brain-gcd.js",
+    "brain-balance": "node dist/bin/brain-balance.js",
     "build": "set NODE_ENV=production && babel src --out-dir dist --source-maps inline ",
     "prepublishOnly": "npm run build",
     "eslint": "eslint"
