@@ -22,19 +22,16 @@ const game = {
   getMainTask() {
     return gameQuestion;
   },
-  getNextQuestion() {
-    return this.nextQuestion;
-  },
-  getCorrectAnswer() {
-    return this.correctAnswer;
-  },
-  nextStep() {
+  play() {
     const num1 = Math.ceil(Math.random() * 100);
     const num2 = Math.ceil(Math.random() * 100);
     const randomIndexOfSignsArray = randomIndexOfArray(SIGNS);
     const sign = SIGNS[randomIndexOfSignsArray];
-    this.nextQuestion = `Question: ${num1} ${sign} ${num2} \n`;
-    this.correctAnswer = `${calculate(num1, num2, sign)}`;
+    const result = {
+      question: `${num1} ${sign} ${num2} \n`,
+      answer: `${calculate(num1, num2, sign)}`,
+    }
+    return result;
   },
 };
 

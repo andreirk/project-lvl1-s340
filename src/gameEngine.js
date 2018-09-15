@@ -7,12 +7,10 @@ export default (game, numberOfStepsInTheGame) => {
   console.log(`${mainGameTask}`);
   const userName = askName();
   for (let i = 0; i < numberOfStepsInTheGame; i += 1) {
-    game.nextStep();
-    const nextQuestion = game.getNextQuestion();
-    const correctAnswer = game.getCorrectAnswer();
-    const userAnswer = readlineSync.question(nextQuestion);
+    const { question, answer } = game.play();
+    const userAnswer = readlineSync.question(question);
     console.log(`You answer: ${userAnswer}`);
-    const isWin = correctAnswer === userAnswer;
+    const isWin = answer === userAnswer;
     if (isWin) {
       console.log('Correct!');
     } else {
