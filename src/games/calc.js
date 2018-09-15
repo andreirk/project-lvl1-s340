@@ -30,7 +30,7 @@ const game = {
     const result = {
       question: `${num1} ${sign} ${num2} \n`,
       answer: `${calculate(num1, num2, sign)}`,
-    }
+    };
     return result;
   },
 };
