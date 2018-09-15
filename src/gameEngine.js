@@ -5,6 +5,7 @@ export default (game, numberOfStepsInTheGame) => {
   console.log('Welcome to the Brain Games!');
   const mainGameTask = game.getMainTask();
   console.log(`${mainGameTask}`);
+  console.log('\n\n');
   const userName = askName();
   for (let i = 0; i < numberOfStepsInTheGame; i += 1) {
     const { question, answer } = game.play();

@@ -1,7 +1,7 @@
 
 
 const SIGNS = ['+', '-', '*'];
-const gameQuestion = 'What is the result of the expression?.\n\n';
+const gameQuestion = 'What is the result of the expression?.';
 
 const randomIndexOfArray = arr => Math.floor(Math.random() * arr.length);
 
