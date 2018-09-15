@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+
 
 const SIGNS = ['+', '-', '*'];
 const gameQuestion = 'What is the result of the expression?.\n\n';
@@ -19,28 +19,23 @@ const calculate = (num1, num2, operation) => {
 };
 
 const game = {
-  askQuestion() {
-    console.log(gameQuestion);
+  getMainTask() {
+    return gameQuestion;
   },
-  run(numberOfRounds) {
-    for (let i = 0; i < numberOfRounds; i += 1) {
-      const num1 = Math.ceil(Math.random() * 100);
-      const num2 = Math.ceil(Math.random() * 100);
-      const randomIndexOfSignsArray = randomIndexOfArray(SIGNS);
-      const sign = SIGNS[randomIndexOfSignsArray];
-      const userAnswer = readlineSync.question(`Question: ${num1} ${sign} ${num2} \n`);
-      const correctAnswer = `${calculate(num1, num2, sign)}`;
-      console.log(`You answer: ${userAnswer}`);
-      if (userAnswer === correctAnswer) {
-        console.log('Correct!');
-      } else {
-        console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
-        return false;
-      }
-    }
-    return true;
+  getNextQuestion() {
+    return this.nextQuestion;
+  },
+  getCorrectAnswer() {
+    return this.correctAnswer;
+  },
+  nextStep() {
+    const num1 = Math.ceil(Math.random() * 100);
+    const num2 = Math.ceil(Math.random() * 100);
+    const randomIndexOfSignsArray = randomIndexOfArray(SIGNS);
+    const sign = SIGNS[randomIndexOfSignsArray];
+    this.nextQuestion = `Question: ${num1} ${sign} ${num2} \n`;
+    this.correctAnswer = `${calculate(num1, num2, sign)}`;
   },
 };
-
 
 export default game;
