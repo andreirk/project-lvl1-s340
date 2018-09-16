@@ -22,6 +22,7 @@ export default (game, numberOfStepsInTheGame) => {
     if (isWin) {
       console.log('Correct!');
     } else {
+      console.log(`Wrong! Correct answer is ${answer}`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

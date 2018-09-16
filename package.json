@@ -1,6 +1,6 @@
 {
   "name": "@andreirk/bgames",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "main": "",
   "scripts": {
@@ -10,6 +10,7 @@
     "brain-calc": "node dist/bin/brain-calc.js",
     "brain-gcd": "node dist/bin/brain-gcd.js",
     "brain-balance": "node dist/bin/brain-balance.js",
+    "brain-progression": "node dist/bin/brain-progression.js",
     "build": "set NODE_ENV=production && babel src --out-dir dist --source-maps inline ",
     "prepublishOnly": "npm run build",
     "eslint": "eslint"
