@@ -1,4 +1,4 @@
-
+import gameEngine from '../gameEngine';
 
 const SIGNS = ['+', '-', '*'];
 const gameQuestion = 'What is the result of the expression?.';
@@ -28,11 +28,15 @@ const game = {
     const randomIndexOfSignsArray = randomIndexOfArray(SIGNS);
     const sign = SIGNS[randomIndexOfSignsArray];
     const result = {
-      question: `${num1} ${sign} ${num2} \n`,
+      question: `${num1} ${sign} ${num2}`,
       answer: `${calculate(num1, num2, sign)}`,
     };
     return result;
   },
 };
 
-export default game;
+const numberOfStepsInTheGame = 3;
+
+export default () => {
+  gameEngine(game, numberOfStepsInTheGame);
+};

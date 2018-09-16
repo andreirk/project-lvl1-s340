@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../gameEngine';
 
-const gameQuestion = 'Balance the given number. \n\n';
+const gameQuestion = 'Balance the given number.';
 const isBalancedArr = (arr) => {
   const min = Math.min(...arr);
   const max = Math.max(...arr);
@@ -22,26 +22,23 @@ const balance = (num) => {
   return arr.sort().join('');
 };
 
-
 const game = {
-  askQuestion() {
-    console.log(gameQuestion);
+  getMainTask() {
+    return gameQuestion;
   },
-  run(numberOfRounds) {
-    for (let i = 0; i < numberOfRounds; i += 1) {
-      const num = Math.ceil(Math.random() * 9999);
-      const answer = readlineSync.question(`Question: ${num} \n`);
-      const correctAnswer = balance(num);
-      console.log(`You answer: ${answer}`);
-      if (answer === correctAnswer) {
-        console.log('Correct!');
-      } else {
-        console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
-        return false;
-      }
-    }
-    return true;
+  play() {
+    const num = Math.ceil(Math.random() * 9999);
+    const question = `${num}`;
+    const answer = `${balance(num)}`;
+    return {
+      question,
+      answer,
+    };
   },
 };
 
-export default game;
+const numberOfStepsInTheGame = 3;
+
+export default () => {
+  gameEngine(game, numberOfStepsInTheGame);
+};

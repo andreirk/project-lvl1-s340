@@ -1,6 +1,7 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../gameEngine';
 
-const gameQuestion = '\nWhat is the result of the expression?.\n\n';
+const gameQuestion = 'What is the result of the expression?.';
+
 const calculateGCD = (a, b) => {
   if (!b) {
     return a;
@@ -10,26 +11,23 @@ const calculateGCD = (a, b) => {
 
 
 const game = {
-  askQuestion() {
-    console.log(gameQuestion);
+  getMainTask() {
+    return gameQuestion;
   },
-  run(numberOfRounds) {
-    for (let i = 0; i < numberOfRounds; i += 1) {
-      const num1 = Math.ceil(Math.random() * 100);
-      const num2 = Math.ceil(Math.random() * 100);
-
-      const userAnswer = parseInt(readlineSync.question(`Question: ${num1} ${num2} \n`), 10);
-      const correctAnswer = calculateGCD(num1, num2);
-      console.log(`You answer: ${userAnswer}`);
-      if (userAnswer === correctAnswer) {
-        console.log('Correct!');
-      } else {
-        console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
-        return false;
-      }
-    }
-    return true;
+  play() {
+    const num1 = Math.ceil(Math.random() * 100);
+    const num2 = Math.ceil(Math.random() * 100);
+    const question = `${num1} ${num2}`;
+    const answer = `${calculateGCD(num1, num2)}`;
+    return {
+      question,
+      answer,
+    };
   },
 };
 
-export default game;
+const numberOfStepsInTheGame = 3;
+
+export default () => {
+  gameEngine(game, numberOfStepsInTheGame);
+};
