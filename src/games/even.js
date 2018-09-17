@@ -1,4 +1,4 @@
-import gameEngine from '../gameEngine';
+import gameRunner from '../gameRunner';
 
 const isEven = num => num % 2 === 0;
 const gameQuestion = 'Answer "yes" if number even otherwise answer "no". \n\n';
@@ -17,8 +17,7 @@ const game = {
   },
 };
 
-const numberOfStepsInTheGame = 3;
 
 export default () => {
-  gameEngine(game, numberOfStepsInTheGame);
+  gameRunner(game);
 };

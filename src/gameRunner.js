@@ -1,13 +1,15 @@
 import readlineSync from 'readline-sync';
 import askName from './index';
 
+const numberOfStepsInTheGame = 3;
+
 const putSpaces = (num) => {
   for (let i = 0; i < num; i += 1) {
     console.log('\n');
   }
 };
 
-export default (game, numberOfStepsInTheGame) => {
+export default (game) => {
   console.log('Welcome to the Brain Games!');
   const mainGameTask = game.getMainTask();
   console.log(`${mainGameTask}`);

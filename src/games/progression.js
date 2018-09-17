@@ -1,4 +1,4 @@
-import gameEngine from '../gameEngine';
+import gameRunner from '../gameRunner';
 
 
 const gameQuestion = 'What number is missing in this progression?';
@@ -39,8 +39,7 @@ const game = {
   },
 };
 
-const numberOfStepsInTheGame = 3;
 
 export default () => {
-  gameEngine(game, numberOfStepsInTheGame);
+  gameRunner(game);
 };

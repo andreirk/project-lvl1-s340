@@ -1,4 +1,4 @@
-import gameEngine from '../gameEngine';
+import gameRunner from '../gameRunner';
 
 const gameQuestion = 'What is the result of the expression?.';
 
@@ -26,8 +26,7 @@ const game = {
   },
 };
 
-const numberOfStepsInTheGame = 3;
 
 export default () => {
-  gameEngine(game, numberOfStepsInTheGame);
+  gameRunner(game);
 };

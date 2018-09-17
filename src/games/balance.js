@@ -1,4 +1,4 @@
-import gameEngine from '../gameEngine';
+import gameRunner from '../gameRunner';
 
 const gameQuestion = 'Balance the given number.';
 const isBalancedArr = (arr) => {
@@ -37,8 +37,7 @@ const game = {
   },
 };
 
-const numberOfStepsInTheGame = 3;
 
 export default () => {
-  gameEngine(game, numberOfStepsInTheGame);
+  gameRunner(game);
 };
